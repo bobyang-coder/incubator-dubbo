@@ -28,7 +28,7 @@ import java.util.Map;
 
 /**
  * ApplicationConfig
- *
+ * bob-ps:dubbo应用配置
  * @export
  */
 public class ApplicationConfig extends AbstractConfig {

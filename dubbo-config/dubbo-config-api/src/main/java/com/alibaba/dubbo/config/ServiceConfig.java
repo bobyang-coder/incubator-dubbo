@@ -63,7 +63,7 @@ import static com.alibaba.dubbo.common.utils.NetUtils.isInvalidPort;
 
 /**
  * ServiceConfig
- *
+ * bob-ps：服务提供者暴露服务配置，与ProviderConfig是用来暴露服务的
  * @export
  */
 public class ServiceConfig<T> extends AbstractServiceConfig {
@@ -191,7 +191,9 @@ public class ServiceConfig<T> extends AbstractServiceConfig {
         return unexported;
     }
 
+    //bob-ps:暴露及注册服务
     public synchronized void export() {
+        //1. 判断是否有服务提供者配置
         if (provider != null) {
             if (export == null) {
                 export = provider.getExport();
@@ -200,10 +202,11 @@ public class ServiceConfig<T> extends AbstractServiceConfig {
                 delay = provider.getDelay();
             }
         }
+        //2. 判断是否已暴露服务
         if (export != null && !export) {
             return;
         }
-
+        //3.判断是否延迟暴露
         if (delay != null && delay > 0) {
             delayExportExecutor.schedule(new Runnable() {
                 public void run() {

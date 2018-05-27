@@ -35,7 +35,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * ProtocolConfig
- *
+ * bob-ps:协议配置
  * @export
  */
 public class ProtocolConfig extends AbstractConfig {

@@ -24,7 +24,7 @@ import java.util.Map;
 
 /**
  * RegistryConfig
- *
+ * bob-ps:注册中心配置
  * @export
  */
 public class RegistryConfig extends AbstractConfig {

@@ -97,6 +97,7 @@ public abstract class AbstractConfig implements Serializable {
         return value;
     }
 
+    //bob-ps:添加参数
     protected static void appendProperties(AbstractConfig config) {
         if (config == null) {
             return;
@@ -164,6 +165,7 @@ public abstract class AbstractConfig implements Serializable {
         }
     }
 
+    //根据class获取tag名称
     private static String getTagName(Class<?> cls) {
         String tag = cls.getSimpleName();
         for (String suffix : SUFFIXES) {
